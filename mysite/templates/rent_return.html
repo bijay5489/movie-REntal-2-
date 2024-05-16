@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Rent/Return Movies | BrickSmasher Movie Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Modern, readable font */
+            background-color: #f2f2f2; /* Light and neutral background color */
+            padding: 20px;
+            color: #333; /* Darker text for better readability */
+        }
+        h1, h2 {
+            text-align: center; /* Centered headings */
+            color: #5a5a5a;
+        }
+        .back-link {
+            display: block;
+            width: max-content;
+            margin: 10px auto; /* Centers the link */
+            padding: 8px 12px;
+            background-color: #007BFF; /* Bootstrap blue */
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-link:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        input[type="email"] {
+            width: 80%; /* Responsive width */
+            max-width: 500px; /* Maximum width */
+            padding: 8px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745; /* Green for actions */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto; /* Center button */
+        }
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        table {
+            width: 100%; /* Full width table */
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Row separation */
+        }
+        th {
+            background-color: #4CAF50; /* Green header */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rent & Return</h1>
+    <a href="{% url 'home' %}" class="back-link">Back to Home</a>
+    <div>
+        <input type="email" id="member-email" placeholder="Member Email">
+        <button onclick="fetchMember()">Submit</button>
+    </div>
+    <div id="member-info"></div>
+    <div id="checked-out-container"></div>
+
+    <h2>All Movies</h2>
+    <table id="all-movies-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody id="all-movies-table-body">
+            <!-- Filled by JS -->
+        </tbody>
+    </table>
+    <div id="error-message"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/rent_return.js' %}"></script>
+</body>
+
+</html>

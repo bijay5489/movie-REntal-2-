@@ -1,0 +1,54 @@
+body {
+  background: #900e0e;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#error-message {
+  margin-top: 10px;
+  color: #d3d70f;
+}
+
+
+#account-form {
+  border: 1px solid #b3b521;
+  width: min-content;
+  padding: 10px;
+}
+
+#success-message {
+  margin-top: 10px;
+  color: #0f0080;
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  margin-top: 10px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.movies-table-item {
+  min-width: 100px;
+}
+
+.act-btn {
+  width: 55px;
+}
+
+#checked-out-table, #all-movies-table {
+  min-width: 400px;
+}
+
+.rent-return-item:hover {
+  cursor: pointer;
+}
+

@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Create Account | BrickSmasher Movie Rentals</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif; /* Modern and readable font */
+            background-color: #f0f0f0; /* Neutral background color */
+            color: #333; /* Dark gray color for text */
+            padding: 20px;
+        }
+        h1 {
+            text-align: center; /* Center-align the header */
+        }
+        #account-form {
+            background: white; /* Background color for the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+            padding: 20px;
+            width: 300px; /* Fixed width */
+            margin: 20px auto; /* Center form on the page */
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%; /* Full-width inputs */
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 16px; /* Spacing between fields */
+            box-sizing: border-box; /* Border-box sizing */
+            border: 1px solid #ccc; /* Subtle border */
+            border-radius: 4px; /* Rounded borders on inputs */
+        }
+        button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px; /* Rounded button */
+        }
+        .back-link {
+            display: block;
+            width: fit-content;
+            margin: 10px auto; /* Centering the back link */
+            padding: 5px 10px;
+            background-color: #ddd; /* Light gray background */
+            text-align: center;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            background-color: #ccc; /* Slightly darker on hover */
+        }
+        #success-message, #error-message {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #error-message {
+            color: red; /* Red color for errors */
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Account</h1>
+    <a href="{% url 'home' %}" class="back-link">Back to Home</a>
+    <form id="account-form">
+        First Name: <input type="text" id="first-name"><br>
+        Last Name: <input type="text" id="last-name"><br>
+        Email: <input type="email" id="email"><br>
+        <button type="button" onclick="createAccount()">Create Account</button>
+    </form>
+    <div id="success-message"></div>
+    <div id="error-message"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/account.js' %}"></script>
+</body>
+</html>

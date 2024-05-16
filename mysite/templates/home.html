@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Movie Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Clean and modern font */
+            background-color: #f4f4f9; /* Light grey background */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4a4e69; /* Dark blue color for the header */
+            text-align: center;
+        }
+        ul {
+            list-style-type: none; /* Removes default list styling */
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            margin-bottom: 10px; /* Adds space between each link */
+            background-color: #9a8c98; /* Light purple background */
+            text-align: center;
+        }
+        a {
+            text-decoration: none; /* Removes underline from links */
+            color: white; /* White text for better contrast */
+            display: block;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #c9ada7; /* Light red for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Rentals</h1>
+    <ul>
+        <li><a href="{% url 'account' %}">Create Account</a></li>
+        <li><a href="{% url 'movie' %}">Manage Movies</a></li>
+        <li><a href="{% url 'rent' %}">Rent/Return Movies</a></li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Manage Movies | BrickSmasher Movie Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Uses a more modern font */
+            background-color: #f4f4f9; /* Soft background color */
+            padding: 20px;
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-block;
+            background-color: #ddd;
+            color: #333;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-link:hover {
+            background-color: #ccc;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #movies-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Movies</h1>
+    <a href="{% url 'home' %}" class="back-link">Back to Home</a>
+    <input type="text" id="new-movie-title" placeholder="Movie Title">
+    <button onclick="addMovie()">Add Movie</button>
+    <div id="movies-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="movies-table-item">Title</th>
+                    <th class="movies-table-item">In Stock</th>
+                    <th class="movies-table-item">Checked Out</th>
+                    <th class="movies-table-item">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="movies-table-body">
+                <!-- Movie rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="error-message"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/movie.js' %}"></script>
+</body>
+</html>
